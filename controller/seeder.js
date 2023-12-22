@@ -8,36 +8,61 @@ const mongoose = require('mongoose');
 const data_inventory = [
     {
         _id: new mongoose.Types.ObjectId(),
-        name: "Dulap",
+        name: "Closet",
         quantity: 1,
     },
     {
         _id: new mongoose.Types.ObjectId(),
-        name: "Scaune",
+        name: "Chairs",
         quantity: 3,
+    },
+    {
+        _id: new mongoose.Types.ObjectId(),
+        name: "Table",
+        quantity: 1,
     }
 ];
 const data_supplies = [
     {
         _id: new mongoose.Types.ObjectId(),
-        name: "Sapun",
+        name: "Soap",
         quantity: 3,
     },
     {
         _id: new mongoose.Types.ObjectId(),
-        name: "Hartie igienica",
+        name: "Toilet paper",
         quantity: 5,
+    },
+    {
+        _id: new mongoose.Types.ObjectId(),
+        name: "Towels",
+        quantity: 7,
+    },
+    {
+        _id: new mongoose.Types.ObjectId(),
+        name: "Shower Gel",
+        quantity: 1,
+    },
+    {
+        _id: new mongoose.Types.ObjectId(),
+        name: "Trash bag",
+        quantity: 1,
     }
 ];
 const data_facilities = [
     {
         _id: new mongoose.Types.ObjectId(),
-        name: "Televizor",
+        name: "TV",
         quantity: 1,
     },
     {
         _id: new mongoose.Types.ObjectId(),
-        name: "Frigider",
+        name: "Fridge",
+        quantity: 1,
+    },
+    {
+        _id: new mongoose.Types.ObjectId(),
+        name: "Microwave",
         quantity: 1,
     }
 ];
@@ -50,8 +75,8 @@ const data_rooms = [
         number_of_beds: 2,
         image_urls: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaFhJ3WnMt2c8wuUYo626B0jPwMdKX85T5sA&usqp=CAU'],
         current_bookings: [],
-        inventoryID: data_inventory[0]._id,
-        suppliesID: data_supplies[0]._id,
+        inventoryID:[ data_inventory[0]._id,data_inventory[1]._id, data_inventory[2]._id],
+        suppliesID: [data_supplies[0]._id, data_supplies[1]._id,data_supplies[2]._id],
         facilitiesID: data_facilities[0]._id,
     },
     {
@@ -61,9 +86,29 @@ const data_rooms = [
         image_urls: ['https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/1real-homes-in-1669021353-jiSjM/ond-2022-1669032781-pWI47/wall-paint-1669871644-nrqVf/d-inwp-ond2022-0104-1671099486-PF4b3/living-room-05-1-1671099496-1tmXX.jpg',
             'https://media.designcafe.com/wp-content/uploads/2019/12/09102702/modern-living-room-design-with-tv-unit-designed-with-storage.jpg'],
         current_bookings: [],
-        inventoryID: data_inventory[1]._id,
-        suppliesID: data_supplies[1]._id,
-        facilitiesID: data_facilities[1]._id,
+        inventoryID: [ data_inventory[0]._id,data_inventory[1]._id, data_inventory[2]._id],
+        suppliesID:[data_supplies[0]._id, data_supplies[3]._id,data_supplies[4]._id],
+        facilitiesID: data_facilities[2]._id,
+    },
+    {
+        _id: new mongoose.Types.ObjectId(),
+        room_number: 104,
+        number_of_beds: 2,
+        image_urls: ['https://www.myboutiquehotel.com/photos/110961/shinola-hotel-detroit-005-90455-1110x700.jpg,https://static01.nyt.com/images/2019/03/24/travel/24trending-shophotels1/24trending-shophotels1-videoSixteenByNineJumbo1600.jpg'],
+        current_bookings: [],
+        inventoryID: [ data_inventory[0]._id,data_inventory[1]._id, data_inventory[2]._id],
+        suppliesID:[data_supplies[0]._id, data_supplies[3]._id,data_supplies[4]._id],
+        facilitiesID: [data_facilities[0]._id, data_facilities[1]._id],
+    },
+    {
+        _id: new mongoose.Types.ObjectId(),
+        room_number: 104,
+        number_of_beds: 2,
+        image_urls: ['https://www.rwlasvegas.com/wp-content/uploads/2022/05/crockfords-las-vegas-standard-deluxe-bedroom_1000x880.jpg'],
+        current_bookings: [],
+        inventoryID: [ data_inventory[0]._id,data_inventory[1]._id, data_inventory[2]._id],
+        suppliesID:[data_supplies[0]._id, data_supplies[1]._id,data_supplies[3]._id],
+        facilitiesID: [data_facilities[0]._id, data_facilities[2]._id],
     },
 
 ];
@@ -71,9 +116,14 @@ const data_rooms = [
 const data_apartment = [
     {
         _id: new mongoose.Types.ObjectId(),
-        name:"test",
-        roomID: data_rooms[0]._id
+        name:"Apartment TH",
+        roomID: [data_rooms[0]._id, data_rooms[1]._id]
     },
+    {
+        _id: new mongoose.Types.ObjectId(),
+        name:"Apartment TH",
+        roomID: [data_rooms[2]._id, data_rooms[3]._id]
+    }
 
 ];
 //----------------------
