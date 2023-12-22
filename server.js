@@ -13,7 +13,7 @@ const dataSeeder=require('./controller/seeder')
 
 app.use(express.json());
 app.use(cors());
-dataSeeder();
+//dataSeeder();
 
 
 app.use('/api/rooms',roomsRoute)
